@@ -2,7 +2,7 @@ r = round(rnd*9) + 1
 url = "https://metaverse.web3done.com/my-content/sounds/ballkick/ballkick" + r + ".mp3"
 playAudio "ballSound_trigger", url, "oneshot", 1
 
-
+sd
 miniscript
 // Generate a random number between 0 and 9
 r = round(rnd*9)
