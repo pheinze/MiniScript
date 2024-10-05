@@ -12,9 +12,6 @@ url = "https://metaverse.web3done.com/my-content/sounds/ballkick/ballkick" + r +
 // Play the audio file with the specified settings
 playAudio "ballSound_trigger", url, "oneshot", 1
 
-
-
-
 /// This MiniScript randomly selects a ball kick sound to play from a list of 10 options.
 r = round(rnd*9)
 if r == 0 then
