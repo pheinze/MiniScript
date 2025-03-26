@@ -72,28 +72,7 @@ scaleObject object7, (height / 2) * (16/9) , height / 2, 0.001
 
 /////////////
 
-// Funktionen zur Objektmanipulation
-
-// Funktion zum Anwenden der Transformationen auf ein Objekt
-applyTransform = function(objectName, x, y, z, rx, ry, rz, width, height, length)
-  moveObject objectName, x, y, z
-  rotateObject objectName, rx, ry, rz
-  scaleObject objectName, width, height, length
-end function
-
-// Funktion zur Berechnung der Wandposition
-calcWallPosition = function(baseX, baseZ, distance, angle, offset)
-  dx = distance * cos(angle)
-  dz = distance * sin(angle)
-  return [
-    baseX + offset * dx,
-    baseZ + offset * dz
-  ]
-end function
-
-// Initialisierung
-
-// Konstanten
+// Konstanten definieren
 length = 6
 width = 12
 height = 4
@@ -105,41 +84,57 @@ positiony = 0
 positionz = 6
 rotationx = 0
 rotationy = 20
-rotationz = 0
 
-// Hilfsberechnungen
+// Winkel in Radiant umrechnen und Cosinus/Sinus vorab berechnen
 angle = rotationy * pi / 180
-cos = cos(angle)
-sin = sin(angle)
+cos_angle = cos(angle)
+sin_angle = sin(angle)
 
-// Objektkonfigurationen
-objectConfigs = [
-  {name: "Floor1",   type: "Base", distanceOffset: 0,  rotationOffset: 0,  width: width, length: length, height: 0.001},
-  {name: "Wall1a",   type: "Wall", distanceOffset: -1, rotationOffset: 90,  length: length, height: height, thickness: thickness},
-  {name: "Image1",  type: "Image", distanceOffset: -1, rotationOffset: 90,  height: height},
-  {name: "Wall1b",   type: "Wall", distanceOffset: 1,  rotationOffset: 90,  length: length, height: height, thickness: thickness},
-  {name: "Image2",  type: "Image", distanceOffset: 1,  rotationOffset: 90,  height: height},
-  {name: "Wall1c",   type: "Wall", distanceOffset: 0,  rotationOffset: 0,  width: width,  height: height, thickness: thickness},
-  {name: "Image3",  type: "Image", distanceOffset: 1,  rotationOffset: 0,  height: height}
+// Distanzen vorab berechnen
+distance = width / 2
+distance2 = length / 2
+
+// Funktion zur Berechnung der Wandpositionen
+calcWallPosition = function(x, z, dist, cos_a, sin_a, offset)
+  return [
+    x + offset * dist * cos_a,
+    z + offset * dist * sin_a
+  ]
+end function
+
+// Objektparameter in einer Datenstruktur speichern
+objects = [
+  { name: "Floor1",   type: "floor",   xOffset: 0,   zOffset: 0,   rotOffset: 0,   width: width,   height: 0.001, length: length },
+  { name: "Wall1a",   type: "wall",    xOffset: -1,  zOffset: 1,   rotOffset: 90,  width: length,  height: height,  length: thickness },
+  { name: "Image1",  type: "image",   xOffset: -1,  zOffset: 1,   rotOffset: 90,  width: null,    height: height,  length: 0.001 },
+  { name: "Wall1b",   type: "wall",    xOffset: 1,   zOffset: -1,  rotOffset: 90,  width: length,  height: height,  length: thickness },
+  { name: "Image2",  type: "image",   xOffset: 1,   zOffset: -1,  rotOffset: 90,  width: null,    height: height,  length: 0.001 },
+  { name: "Wall1c",   type: "wall",    xOffset: 1,   zOffset: 1,   rotOffset: 0,   width: width,   height: height,  length: thickness },
+  { name: "Image3",  type: "image",   xOffset: 1,   zOffset: 1,   rotOffset: 0,   width: null,    height: height,  length: 0.001 }
 ]
 
-// Transformationen anwenden
-for config in objectConfigs
+// Objekte verarbeiten
+for obj in objects
   local x, z
 
-  if config.type == "Wall" or config.type == "Image" then
-    local wallPos = calcWallPosition(positionx, positionz, width / 2, angle, config.distanceOffset)
-    x = wallPos[0]
-    z = wallPos[1]
-  else
+  if obj.type == "floor" then
     x = positionx
     z = positionz
+  elseif obj.type == "wall" then
+    pos = calcWallPosition(positionx, positionz, distance, cos_angle, sin_angle, obj.xOffset)
+    x = pos[0]
+    z = pos[1]
+  elseif obj.type == "image" then
+    pos = calcWallPosition(positionx, positionz, distance, cos_angle, sin_angle, obj.xOffset)
+    x = pos[0] + obj.length * 3   // Korrektur für Bildposition
+    z = pos[1]
   end if
 
-  local w = config.width  ? config.width  : (config.type == "Image" ? (config.height / 2) * (16/9) : 1)
-  local h = config.height ? config.height : 1
-  local l = config.length ? config.length : 1
-  local rOffset = config.rotationOffset ? config.rotationOffset : 0
+  local objWidth  = obj.width  ? obj.width  : (obj.type == "image" ? (obj.height / 2) * (16/9) : 1)
+  local objLength = obj.length ? obj.length : 1
 
-  applyTransform(config.name, x, positiony, z, rotationx, rotationy + rOffset, rotationz, w, h, l)
+  moveObject   obj.name, x, positiony + (obj.type == "wall" ? height / 2 : 0), z
+  rotateObject obj.name, rotationx, rotationy + obj.rotOffset, rotationz
+  scaleObject  obj.name, objWidth, obj.height, objLength
 end for
+ 
