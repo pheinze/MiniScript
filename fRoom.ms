@@ -66,3 +66,76 @@ scaleObject object4, width, height, thickness
 moveObject object7, wallx + dx2, wally, wallz + dz2 - thickness * 3
 rotateObject object7, rotationx, rotationy, rotationz
 scaleObject object7, (height / 2) * (16/9) , height / 2, 0.001
+
+
+// Funktionen zur Objektmanipulation
+
+// Funktion zum Anwenden der Transformationen auf ein Objekt
+applyTransform = function(objectName, x, y, z, rx, ry, rz, width, height, length)
+  moveObject objectName, x, y, z
+  rotateObject objectName, rx, ry, rz
+  scaleObject objectName, width, height, length
+end function
+
+// Funktion zur Berechnung der Wandposition
+calcWallPosition = function(baseX, baseZ, distance, angle, offset)
+  dx = distance * cos(angle)
+  dz = distance * sin(angle)
+  return [
+    baseX + offset * dx,
+    baseZ + offset * dz
+  ]
+end function
+
+// Initialisierung
+
+// Konstanten
+length = 6
+width = 12
+height = 4
+thickness = 0.1
+baseheight = 0.15
+basedepth = 0.2
+positionx = 2
+positiony = 0
+positionz = 6
+rotationx = 0
+rotationy = 20
+rotationz = 0
+
+// Hilfsberechnungen
+angle = rotationy * pi / 180
+cos = cos(angle)
+sin = sin(angle)
+
+// Objektkonfigurationen
+objectConfigs = [
+  {name: "Floor1",   type: "Base", distanceOffset: 0,  rotationOffset: 0,  width: width, length: length, height: 0.001},
+  {name: "Wall1a",   type: "Wall", distanceOffset: -1, rotationOffset: 90,  length: length, height: height, thickness: thickness},
+  {name: "Image1",  type: "Image", distanceOffset: -1, rotationOffset: 90,  height: height},
+  {name: "Wall1b",   type: "Wall", distanceOffset: 1,  rotationOffset: 90,  length: length, height: height, thickness: thickness},
+  {name: "Image2",  type: "Image", distanceOffset: 1,  rotationOffset: 90,  height: height},
+  {name: "Wall1c",   type: "Wall", distanceOffset: 0,  rotationOffset: 0,  width: width,  height: height, thickness: thickness},
+  {name: "Image3",  type: "Image", distanceOffset: 1,  rotationOffset: 0,  height: height}
+]
+
+// Transformationen anwenden
+for config in objectConfigs
+  local x, z
+
+  if config.type == "Wall" or config.type == "Image" then
+    local wallPos = calcWallPosition(positionx, positionz, width / 2, angle, config.distanceOffset)
+    x = wallPos[0]
+    z = wallPos[1]
+  else
+    x = positionx
+    z = positionz
+  end if
+
+  local w = config.width  ? config.width  : (config.type == "Image" ? (config.height / 2) * (16/9) : 1)
+  local h = config.height ? config.height : 1
+  local l = config.length ? config.length : 1
+  local rOffset = config.rotationOffset ? config.rotationOffset : 0
+
+  applyTransform(config.name, x, positiony, z, rotationx, rotationy + rOffset, rotationz, w, h, l)
+end for
