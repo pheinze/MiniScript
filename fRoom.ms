@@ -140,3 +140,33 @@ end for
 
 
 // 
+
+// Tischparameter
+tableWidth = 120   // Breite des Tisches
+tableLength = 80  // Länge des Tisches
+tableHeight = 0.8    // Höhe des Tisches
+
+// Objektnamen
+tableTopName = "Cube.TableTop"  // Name des Tischplatten-Objekts
+tableLegName = "Cube.TableLeg"    // Name des Tischbein-Objekts
+
+// Tischplatte skalieren und positionieren
+moveObject tableTopName, 0, tableHeight, 0
+scaleObject tableTopName, tableWidth, 0.1, tableLength
+
+// Tischbeinparameter
+tableLegWidth = 5       // Breite der Tischbeine
+tableLegHeight = tableHeight // Höhe der Tischbeine
+tableLegDepth = 5       // Tiefe der Tischbeine
+
+// Funktion zum Positionieren und Skalieren eines Tischbeins
+positionTableLeg = function(xOffset, zOffset)
+    moveObject tableLegName, xOffset, tableLegHeight / 2, zOffset
+    scaleObject tableLegName, tableLegWidth, tableLegHeight, tableLegDepth
+end function
+
+// Tischbeine positionieren und skalieren
+positionTableLeg tableWidth / 2 - tableLegWidth / 2, tableLength / 2 - tableLegDepth / 2
+positionTableLeg tableWidth / 2 - tableLegWidth / 2, -tableLength / 2 + tableLegDepth / 2
+positionTableLeg -tableWidth / 2 + tableLegWidth / 2, tableLength / 2 - tableLegDepth / 2
+positionTableLeg -tableWidth / 2 + tableLegWidth / 2, -tableLength / 2 + tableLegDepth / 2
