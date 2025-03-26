@@ -1,3 +1,11 @@
+object1 = "Floor1"
+object2 = "Wall1a"
+object3 = "Wall1b"
+object4 = "Wall1c"
+object5 = "Image1"
+object6 = "Image2"
+object7 = "Image3"
+
 length = 6
 width = 12
 height = 4
@@ -11,13 +19,7 @@ rotationx = 0
 rotationy = 20
 rotationz = 0
 
-object1 = "Floor1"
-object2 = "Wall1a"
-object3 = "Wall1b"
-object4 = "Wall1c"
-object5 = "Image1"
-object6 = "Image2"
-object7 = "Image3"
+
 
 // define a constant for the rotation angle in radians
 angle = rotationy * pi / 180
