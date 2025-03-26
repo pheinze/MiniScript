@@ -37,3 +37,30 @@ while true
     end if
     wait round(rnd*6) +4
 end while
+
+//
+// Konstanten
+baseScale = 0.9
+animationScale = 1.6 * 3
+animationTime = 4
+scaleZ = 0.01 * 3
+objects = ["view1", "view2", "view3", "view4", "view5"]
+
+// Funktion zum Skalieren eines Objekts
+scaleView = function(object, scaleFactor)
+  scaleObject object, animationScale * scaleFactor, animationScale * scaleFactor, scaleZ
+end function
+
+while true
+  r = round(rnd * 4)
+  for i in range(0, objects.len - 1)
+    if i == r then
+      scaleView(objects[i], 1)
+    else
+      scaleView(objects[i], baseScale)
+    end if
+  end for
+  scaleView(objects[objects.len], 1)
+  wait round(rnd * 6) + animationTime
+end while
+ 
