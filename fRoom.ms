@@ -139,29 +139,4 @@ for obj in objects
 end for
 
 
-// Tischparameter
-tableWidth = 120  // Breite des Tisches
-tableLength = 80  // Länge des Tisches
-tableHeight = 0.8   // Höhe des Tisches
-
-// Tischplatte erstellen
-tableName = "TableTop"
-moveObject tableName, 0, tableHeight, 0  // Positioniere die Tischplatte
-scaleObject tableName, tableWidth, 0.1, tableLength  // Skaliere die Tischplatte
-
-// Tischbeine erstellen
-tableLegWidth = 5       // Breite der Tischbeine
-tableLegHeight = tableHeight // Höhe der Tischbeine
-tableLegDepth = 5       // Tiefe der Tischbeine
-
-// Funktion zum Erstellen eines Tischbeins
-createTableLeg = function(name, xOffset, zOffset)
-  moveObject name, xOffset, tableLegHeight / 2, zOffset  // Positioniere das Tischbein
-  scaleObject name, tableLegWidth, tableLegHeight, tableLegDepth  // Skaliere das Tischbein
-end function
-
-// Tischbeine erstellen und positionieren
-createTableLeg "TableLeg1", tableWidth / 2 - tableLegWidth / 2, tableLength / 2 - tableLegDepth / 2
-createTableLeg "TableLeg2", tableWidth / 2 - tableLegWidth / 2, -tableLength / 2 + tableLegDepth / 2
-createTableLeg "TableLeg3", -tableWidth / 2 + tableLegWidth / 2, tableLength / 2 - tableLegDepth / 2
-createTableLeg "TableLeg4", -tableWidth / 2 + tableLegWidth / 2, -tableLength / 2 + tableLegDepth / 2
+// 
