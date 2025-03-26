@@ -146,14 +146,13 @@ tableWidth = 120   // Breite des Tisches
 tableLength = 80  // Länge des Tisches
 tableHeight = 0.8    // Höhe des Tisches
 
-// Tischposition
+// Basisposition des Tisches
 tablePositionX = 0    // X-Position des Tisches
 tablePositionY = 0    // Y-Position des Tisches
 tablePositionZ = 0    // Z-Position des Tisches
 
-// Objektnamen
-tableTopName = "Cube.TableTop"  // Name des Tischplatten-Objekts
-tableLegName = "Cube.TableLeg"    // Name des Tischbein-Objekts
+// Name der Tischplatte
+tableTopName = "Tischplatte"
 
 // Tischplatte skalieren und positionieren
 moveObject tableTopName, tablePositionX, tablePositionY + tableHeight, tablePositionZ
@@ -165,13 +164,14 @@ tableLegHeight = tableHeight // Höhe der Tischbeine
 tableLegDepth = 5       // Tiefe der Tischbeine
 
 // Funktion zum Positionieren und Skalieren eines Tischbeins
-positionTableLeg = function(xOffset, zOffset)
+positionTableLeg = function(legNumber, xOffset, zOffset)
+    local tableLegName = "Tischbein(" + legNumber + ")"  // Dynamischer Tischbeinname
     moveObject tableLegName, tablePositionX + xOffset, tablePositionY + tableLegHeight / 2, tablePositionZ + zOffset
     scaleObject tableLegName, tableLegWidth, tableLegHeight, tableLegDepth
 end function
 
 // Tischbeine positionieren und skalieren
-positionTableLeg tableWidth / 2 - tableLegWidth / 2, tableLength / 2 - tableLegDepth / 2
-positionTableLeg tableWidth / 2 - tableLegWidth / 2, -tableLength / 2 + tableLegDepth / 2
-positionTableLeg -tableWidth / 2 + tableLegWidth / 2, tableLength / 2 - tableLegDepth / 2
-positionTableLeg -tableWidth / 2 + tableLegWidth / 2, -tableLength / 2 + tableLegDepth / 2
+positionTableLeg 1, tableWidth / 2 - tableLegWidth / 2, tableLength / 2 - tableLegDepth / 2
+positionTableLeg 2, tableWidth / 2 - tableLegWidth / 2, -tableLength / 2 + tableLegDepth / 2
+positionTableLeg 3, -tableWidth / 2 + tableLegWidth / 2, tableLength / 2 - tableLegDepth / 2
+positionTableLeg 4, -tableWidth / 2 + tableLegWidth / 2, -tableLength / 2 + tableLegDepth / 2
