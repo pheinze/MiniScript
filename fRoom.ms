@@ -68,6 +68,8 @@ rotateObject object7, rotationx, rotationy, rotationz
 scaleObject object7, (height / 2) * (16/9) , height / 2, 0.001
 
 
+/////////////
+
 // Funktionen zur Objektmanipulation
 
 // Funktion zum Anwenden der Transformationen auf ein Objekt
