@@ -1,8 +1,8 @@
 object1 = "Sphere(1)"
-x = 2
+x = 1
 y = 2
-z = 2
-amplitude = 0.001
+z = 3
+amplitude = 0.1
 frequency = 4
 while true
     newY = y + amplitude * sin(frequency * time)
