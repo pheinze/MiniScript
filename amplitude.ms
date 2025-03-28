@@ -1,5 +1,4 @@
-object1 = "Cylinder1"
-
+object1 = "Sphere(1)"
 x = 2
 y = 2
 z = 2
