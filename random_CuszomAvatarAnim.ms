@@ -1,2 +1,2 @@
 rndAnimation = {0:4,1:8,2:25,3:29,4:32,5:38,6:41,7:42,8:42,9:44,10:80,11:81,12:82,13:84,14:85,15:86,16:87,17:88,18:94,19:95,20:101}
-customAvatarAnim "TriggerObject", rndAnimation[round(rnd*20)]
+customAvatarAnim "TriggerObject", rndAnimation[round(rnd*rndAnimation.len)]
