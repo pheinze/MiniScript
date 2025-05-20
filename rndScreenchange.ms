@@ -38,7 +38,7 @@ while true
     wait round(rnd*6) +4
 end while
 
-//
+// Optimized version of the code
 // Konstanten
 baseScale = 0.9
 animationScale = 1.6 * 3
