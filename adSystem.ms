@@ -1,21 +1,21 @@
 // Dictionary to store the URLs of the advertisements
 urls = {
-    "url1": "https://metaverse.web3done.com/my-content/ads/ad1.png",
-    "url2": "https://metaverse.web3done.com/my-content/ads/ad2.png",
-    "url3": "https://metaverse.web3done.com/my-content/ads/ad3.png",
-    "url4": "https://metaverse.web3done.com/my-content/ads/ad4.png",
-    "url5": "https://metaverse.web3done.com/my-content/ads/ad5.png",
-    "url6": "https://metaverse.web3done.com/my-content/ads/ad6.png",
-    "url7": "https://metaverse.web3done.com/my-content/ads/ad7.png",
-    "url8": "https://metaverse.web3done.com/my-content/ads/ad8.png",
-    "url9": "https://metaverse.web3done.com/my-content/ads/ad9.png",
-    "url10": "https://metaverse.web3done.com/my-content/ads/ad10.png",
-    "url11": "https://metaverse.web3done.com/my-content/ads/ad11.png",
-    "url12": "https://metaverse.web3done.com/my-content/ads/ad12.png",
-    "url13": "https://metaverse.web3done.com/my-content/ads/ad13.png",
-    "url14": "https://metaverse.web3done.com/my-content/ads/ad14.png",
-    "url15": "https://metaverse.web3done.com/my-content/ads/ad15.png",
-    "url16": "https://metaverse.web3done.com/my-content/ads/ad16.png"
+    "url1": "https://metaverse.my-domain.com/my-content/ads/ad1.png",
+    "url2": "https://metaverse.my-domain.com/my-content/ads/ad2.png",
+    "url3": "https://metaverse.my-domain.com/my-content/ads/ad3.png",
+    "url4": "https://metaverse.my-domain.com/my-content/ads/ad4.png",
+    "url5": "https://metaverse.my-domain.com/my-content/ads/ad5.png",
+    "url6": "https://metaverse.my-domain.com/my-content/ads/ad6.png",
+    "url7": "https://metaverse.my-domain.com/my-content/ads/ad7.png",
+    "url8": "https://metaverse.my-domain.com/my-content/ads/ad8.png",
+    "url9": "https://metaverse.my-domain.com/my-content/ads/ad9.png",
+    "url10": "https://metaverse.my-domain.com/my-content/ads/ad10.png",
+    "url11": "https://metaverse.my-domain.com/my-content/ads/ad11.png",
+    "url12": "https://metaverse.my-domain.com/my-content/ads/ad12.png",
+    "url13": "https://metaverse.my-domain.com/my-content/ads/ad13.png",
+    "url14": "https://metaverse.my-domain.com/my-content/ads/ad14.png",
+    "url15": "https://metaverse.my-domain.com/my-content/ads/ad15.png",
+    "url16": "https://metaverse.my-domain.com/my-content/ads/ad16.png"
 }
 
 // List to store the advertisement names
@@ -41,9 +41,9 @@ end while
 
 //////////
 /////////////
-url = {0:"https://metaverse.web3done.com/my-content/ads/ad1.png",
-1:"https://metaverse.web3done.com/my-content/ads/ad2.png",
-2:"https://metaverse.web3done.com/my-content/ads/ad3.png"}
+url = {0:"https://metaverse.my-domain.com/my-content/ads/ad1.png",
+1:"https://metaverse.my-domain.com/my-content/ads/ad2.png",
+2:"https://metaverse.my-domain.com/my-content/ads/ad3.png"}
 
 while true
 r = round(rnd*2)

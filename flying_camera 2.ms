@@ -43,7 +43,7 @@ end while
 
 
 
-//home/pat/Assets/Web3Done/MiniScript/flying_camera 2.ms
+//home/pat/Assets/my-domain/MiniScript/flying_camera 2.ms
 
 object1 = "cam5"
 x = 0

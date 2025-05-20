@@ -1,15 +1,15 @@
-url = {0:"https://metaverse.web3done.com/my-content/championverse/Ads/Ad1.jpg",
-1:"https://metaverse.web3done.com/my-content/championverse/Ads/Ad2.jpg",
-2:"https://metaverse.web3done.com/my-content/championverse/Ads/Ad3.jpg",
-3:"https://metaverse.web3done.com/my-content/championverse/Ads/Ad4.jpg",
-4:"https://metaverse.web3done.com/my-content/championverse/Ads/Ad5.jpg",
-5:"https://metaverse.web3done.com/my-content/championverse/Ads/Ad6.jpg",
-6:"https://metaverse.web3done.com/my-content/championverse/Ads/Ad7.jpg",
-7:"https://metaverse.web3done.com/my-content/championverse/Ads/Ad8.jpg",
-7:"https://metaverse.web3done.com/my-content/championverse/Ads/Ad9.jpg",
-8:"https://metaverse.web3done.com/my-content/championverse/Ads/Ad10.jpg",
-9:"https://metaverse.web3done.com/my-content/championverse/Ads/Ad9.jpg",
-10:"https://metaverse.web3done.com/my-content/championverse/Ads/Ad8.jpg"}
+url = {0:"https://metaverse.my-domain.com/my-content/championverse/Ads/Ad1.jpg",
+1:"https://metaverse.my-domain.com/my-content/championverse/Ads/Ad2.jpg",
+2:"https://metaverse.my-domain.com/my-content/championverse/Ads/Ad3.jpg",
+3:"https://metaverse.my-domain.com/my-content/championverse/Ads/Ad4.jpg",
+4:"https://metaverse.my-domain.com/my-content/championverse/Ads/Ad5.jpg",
+5:"https://metaverse.my-domain.com/my-content/championverse/Ads/Ad6.jpg",
+6:"https://metaverse.my-domain.com/my-content/championverse/Ads/Ad7.jpg",
+7:"https://metaverse.my-domain.com/my-content/championverse/Ads/Ad8.jpg",
+7:"https://metaverse.my-domain.com/my-content/championverse/Ads/Ad9.jpg",
+8:"https://metaverse.my-domain.com/my-content/championverse/Ads/Ad10.jpg",
+9:"https://metaverse.my-domain.com/my-content/championverse/Ads/Ad9.jpg",
+10:"https://metaverse.my-domain.com/my-content/championverse/Ads/Ad8.jpg"}
 
 while true
 r = round(rnd*2)

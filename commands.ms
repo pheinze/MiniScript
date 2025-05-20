@@ -2,7 +2,7 @@ networkCommand "Name", "moveObject", "1, 1, 1, 1"
 networkCommand "Name", "scaleObject", "1, 1, 1, 1"
 networkCommand "Name", "rotateObject", "1, 1, 1, 1"
 
-networkCommand "Name", "changeTexture", "https://metaverse.web3done.com/my-content/"
+networkCommand "Name", "changeTexture", "https://metaverse.my-domain.com/my-content/"
 
 networkCommand "Name", "moveObject", "1, 1, 1, 1"
 
@@ -18,7 +18,7 @@ z = -7
 amplitude = 0.1
 frequency = 0.1 
 
-playVideo "videoBall1", "https://metaverse.web3done.com/my-content/video/sphere_video6.mp4", "loop", 0
+playVideo "videoBall1", "https://metaverse.my-domain.com/my-content/video/sphere_video6.mp4", "loop", 0
 
 while true
 r = round(rnd*1)
