@@ -13,3 +13,4 @@ ttp = "true"
 makeNPC object1, camY, mtime, role, m[r], m[r], m[r], m[r], m[r], sr, sound, gpt, code, ttp
 wait 4
 rotateObject "trash", 0, 180, 0
+//
