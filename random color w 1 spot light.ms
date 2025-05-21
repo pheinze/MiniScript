@@ -28,3 +28,24 @@ for i in range(20000, 0.1)
     // Wait for a short duration before the next iteration
     wait z/10
 end for
+
+
+///Optimiert mit Co-Pilot
+
+// Hex-Zeichen als Array
+hex = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"]
+
+// Funktion für zufällige Hex-Farbe
+func randomHexColor
+    return "#" + hex[round(rnd*15)] + hex[round(rnd*15)] + hex[round(rnd*15)] + hex[round(rnd*15)] + hex[round(rnd*15)] + hex[round(rnd*15)]
+end func
+
+for i in range(20000)
+    rVal = rnd
+    z = round(rVal*20)
+    color = randomHexColor()
+    setLightObject "Spot1", color, rVal + 1, "soft", rVal
+    rotateObject "Spot1", time*100, time*100, time*100
+    moveObject "Spot1", rnd*5, rnd*5, rnd*5
+    wait z/10
+end for
