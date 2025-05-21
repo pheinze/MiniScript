@@ -2,14 +2,13 @@ m = {1: "Message 1", 2: "Message 2", 3: "Message 4", 4: "Message 5",5: "Message 
 
 r= round(rnd*m.len) + 1
 object1 = "trash"
-camY = 0.5
-mtime = 4
-role= ""
-sr = "random"
-sound = "6"
-gpt = "false"
-code = ""
-ttp = "true"
+camY = 0.5 // Camera Y position (offset)
+mtime = 4 // Message time
+role= "" // Role of the NPC
+sr = "random" //Show message in sequenz or by random
+sound = "6" // Sound ID (0-50)
+gpt = "false" // GPT mode (true/false)
+code = "" // Code to execute after showing the message
+ttp = "true" // NPC turn to player (true/false)
+
 makeNPC object1, camY, mtime, role, m[r], m[r], m[r], m[r], m[r], sr, sound, gpt, code, ttp
-wait 4
-rotateObject "trash", 0, 180, 0
