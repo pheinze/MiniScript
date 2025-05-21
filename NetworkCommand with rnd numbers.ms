@@ -10,7 +10,11 @@ rz = rnd*360
 
 x = xMin + rnd * (xMax - xMin)
 z = zMin + rnd * (zMax - zMin)
-sData = "" + x + "," + y + "," + z + "," + 2
+sData = "" + x + "," + y + "," + z + "," + 2 // Converts the numbers to a string
+// and concatenates them with commas
+// to create a single string
+// for the network command
 rData = "" + rx + "," + ry + "," + rz + "," + 2
-networkCommand "matrix_dice", "moveObject", sData
-networkCommand "matrix_dice", "rotateObject", rData
+
+networkCommand "matrix_dice", "moveObject", sData // Sends the position data
+networkCommand "matrix_dice", "rotateObject", rData // Sends the rotation data
