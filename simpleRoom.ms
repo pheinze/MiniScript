@@ -24,15 +24,15 @@ rotationz = 0
 // Objects to be created (Cubes and Spheres)
 object1 = "Floor_"  + room_idx   // Floor
 object2 = "Wall1_"  + room_idx // Wall 1
-object3 = "Wall2_"  + room_idx  // Wall 1
-object4 = "Wall3_"  + room_idx  // Wall 1
+object3 = "Wall2_"  + room_idx  // Wall 2
+object4 = "Wall3_"  + room_idx  // Wall 3
 object5 = "topEntrance_"  + room_idx // Top Entrance
 object6 = "lEntrance_"  + room_idx // Left Entrance
 object7 = "rEntrance_"  + room_idx // Right Entrance
-object8 = "Edge1_"  + room_idx
-object9 = "Edge2_"  + room_idx
-object10 = "Edge3_"  + room_idx
-object11 = "Edge4_"  + room_idx
+object8 = "Edge1_"  + room_idx // Edge 1
+object9 = "Edge2_"  + room_idx // Edge 2
+object10 = "Edge3_"  + room_idx // Edge 3
+object11 = "Edge4_"  + room_idx // Edge 4
 
 // --- Angle Calculation ---
 
